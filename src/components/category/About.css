@@ -1,0 +1,58 @@
+.newPost {
+  margin: 60px 0;
+}
+.newPost .container {
+  max-width: 95%;
+}
+.container-about-inner{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #e6e6e6;
+    width: 100%;
+    margin: auto;
+    padding: 20px;
+}
+.container-about .logopic {
+  padding-top: 0px;
+}
+.container-about .logopic img{
+  height:100px;
+  animation: fade 4s ease-in-out 2s infinite reverse;
+}
+@keyframes fade {
+  0%{
+    opacity: 1;
+  }
+  25%{
+    opacity: 0.75;
+  }
+  50%{
+    opacity: 0.5;
+  }
+  75%{
+    opacity: 0.25;
+  }
+  100%{
+    opacity: 0;
+  }
+}
+.bold{
+  margin-top: 2px;
+  font-weight: bold;
+  color: black;
+}
+
+
+.button-about{
+    margin: 10px;
+    border: 1px solid #212121;
+    border-radius: 6px;
+    color: #212121;
+    font-size: 15px;
+    min-height: 44px;
+    padding: 0 20px;
+    transition: border-color 0.2s ease;
+    background-color: rgba(255, 68, 0, 0.792);
+    width: 100%;
+    margin-bottom: 30px;
+}

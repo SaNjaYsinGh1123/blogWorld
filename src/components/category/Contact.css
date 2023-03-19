@@ -1,0 +1,55 @@
+.container-about{
+    height: 500px;
+    border: 1px solid #e6e6e6;
+    border-radius: 12px;
+    padding: 20px;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    margin: auto;
+    margin-top: 80px;
+    padding: 40px;
+}
+.container-about .logopic {
+  padding-top: 0px;
+}
+.container-about .logopic img{
+  height:100px;
+  animation: fade 4s ease-in-out 2s infinite reverse;
+}
+@keyframes fade {
+  0%{
+    opacity: 1;
+  }
+  25%{
+    opacity: 0.75;
+  }
+  50%{
+    opacity: 0.5;
+  }
+  75%{
+    opacity: 0.25;
+  }
+  100%{
+    opacity: 0;
+  }
+}
+
+
+
+.button-about{
+    margin: 10px;
+    border: 1px solid #212121;
+    border-radius: 6px;
+    color: #212121;
+    font-size: 15px;
+    min-height: 44px;
+    padding: 0 20px;
+    transition: border-color 0.2s ease;
+    background-color: rgba(255, 68, 0, 0.792);
+    width: 100%;
+    margin-bottom: 30px;
+}
