@@ -66,6 +66,17 @@ const Account = () => {
                   })
                   navigate('/')
                 }
+                if(result.status === 401){
+                  const message = await result.json();
+                  setLoading(false);
+                  swal({
+                    text: `${message}`,
+                    icon: 'error',
+                    buttons: false,
+                    timer:3000,
+                  });
+                  navigate('/')
+                }  
         } catch (error) {
           // console.log(error);
           setLoading(false);
