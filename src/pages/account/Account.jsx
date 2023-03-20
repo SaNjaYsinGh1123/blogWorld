@@ -38,14 +38,14 @@ const Account = () => {
   }
 
     const updateUser = async() =>{
-      
+      console.log('form',form);
       const formData = new FormData();
       formData.append('username',form.username);
       formData.append('email',form.email);
       formData.append('profilePicture',form.profilePicture);
       formData.append('userId',form.userId);
       
-      if(form.username){
+     if(form.username){
         try {
           setLoading(true);
           const result =await fetch(`${url}/auth/${userIdObj}`, {
@@ -75,8 +75,8 @@ const Account = () => {
                     buttons: false,
                     timer:3000,
                   });
-                  navigate('/')
-                }  
+                }   
+               
         } catch (error) {
           // console.log(error);
           setLoading(false);
