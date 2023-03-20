@@ -56,9 +56,20 @@ const Register = () => {
                 });
                 navigate('/login')
               }        
+              if(result.status === 401){
+                const message = await result.json();
+                setLoading(false);
+                swal({
+                  text: `${message}`,
+                  icon: 'error',
+                  buttons: false,
+                  timer:3000,
+                });
+              }        
               
           
         } catch (error) {
+          setLoading(false);
           swal({
             text: {error},
             icon: 'error',
@@ -67,6 +78,7 @@ const Register = () => {
           });
         }
       }else{
+
         swal({
           text: 'password and confirm password must be same',
           icon: 'error',
@@ -142,6 +154,7 @@ const Register = () => {
               <input 
               name="email"
                 type='text' 
+                required
                 onChange={(e)=>setForm({...form,email:e.target.value})}  
               />
             
@@ -150,6 +163,7 @@ const Register = () => {
               <input 
               name="username"
               type='text' 
+              required
               onChange={(e)=>setForm({...form,username:e.target.value})}  
               />
               {/* <label htmlFor="password" >password</label> */}
@@ -157,6 +171,7 @@ const Register = () => {
               <input 
               name="password"
               type='password'
+              required
               onChange={(e)=>setForm({...form,password:e.target.value})}  
               />
               {/* <label htmlFor="confirm-password" >confirmPassword</label> */}
@@ -164,6 +179,7 @@ const Register = () => {
               <input 
               name="confirm-password"
               type='password'
+              required
               onChange={(e)=>setConf(e.target.value)}  
               />
               <div className="button-look">
