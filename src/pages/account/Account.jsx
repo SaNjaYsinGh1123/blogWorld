@@ -34,7 +34,6 @@ const Account = () => {
   const [form,setForm] = useState(true);
   const handleImage = (e) =>{
     const file = e.target.files[0];
-    console.log('file',file)
     setForm({...form ,profilePicture:file});
   }
 
@@ -60,7 +59,7 @@ const Account = () => {
                   useAppstate.setUser(datajson.username);
                   useAppstate.setProfilePic(datajson.profilePicture.url);
                   swal({
-                    text: 'successfully login',
+                    text: 'account is updated',
                     icon: 'success',
                     buttons: false,
                     timer:3000,
@@ -91,10 +90,8 @@ const Account = () => {
           const result1 =await fetch(`${url}/auth/${userIdObj}`);
            if(result1.status === 200){
              const datajson1 = await result1.json();
-            //  console.log(datajson1);
               setData(datajson1);
               setLoading(false);
-              // // setPicUrl(datajson.image.url);
               setForm({
                 username: datajson1.username,
                 email:datajson1.email,
